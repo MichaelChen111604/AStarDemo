@@ -1,0 +1,12 @@
+1. Download and install Processing at https://processing.org/download/
+
+2. Download and extract AStarSimulator folder
+
+3. Open AStarSimulator.pde, run the program with the play button
+
+4. Left-click on a point to set it as the starting point, right-click on a point to set it as the ending point
+
+5a. If no path exists program will say at the bottom "No path found" at the bottom
+5b. If a path exists, program will highlight the shortest path with a star (a *) that moves along edges highlighted in green
+5c. Edges highlighted in purple after the path is calculated are edges that were searched in the algorithm
+5d. Each point has a red number next to it after the path is calculated, signifying its "weight" (distance to get to the point from the start + distance from the point to the end)- weight is likely incorrect if the point was never actually searched in the algorithm
