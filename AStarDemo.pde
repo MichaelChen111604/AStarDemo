@@ -4,7 +4,7 @@ Mover mover;
 Point startPoint, endPoint;
 Edge activeEdge;
 PImage star;
-int fps = 30;
+int fps = 60;
 int noPathFoundStartTime = -100;
 int highlightAlgorithmStartTime = -100;
 // Flag telling the program to create a mover
@@ -20,7 +20,7 @@ Mode currentMode = Mode.Selecting;
 boolean noPathFound = false, highlightAlgorithm = false;
 
 // EDITABLE PARAMS
-int numPoints = 60, pointRadius = 8, numEdges = 80, edgeWidth = 4, minPointDistance = 50;
+int numPoints = 90, pointRadius = 6, numEdges = 150, edgeWidth = 2, minPointDistance = 40, highlightAlgorithmDuration = 5000;
 color startColor, endColor, activeEdgeColor, moverColor, highlightEdgeColor;
 
 // Helper function to check if point location is valid
@@ -160,8 +160,8 @@ void draw() {
   if (noPathFoundStartTime != -100 && millis() - noPathFoundStartTime >= 5000) {
     noPathFound = false;
   }
-  // Stop highlighting stuff after three seconds
-  if (highlightAlgorithmStartTime != -100 && millis() - highlightAlgorithmStartTime >= 3000) {
+  // Stop highlighting stuff after highlightAlgorithmDuration milliseconds
+  if (highlightAlgorithmStartTime != -100 && millis() - highlightAlgorithmStartTime >= highlightAlgorithmDuration) {
     highlightAlgorithm = false;
     highlightAlgorithmStartTime = -100;
     for (Edge e : edges) { 
